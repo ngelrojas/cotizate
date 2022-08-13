@@ -1,11 +1,15 @@
 import React from 'react';
-import HomePage from './views/home';
+import MainRouter from './routes'; 
+import Headers from './components/headers';
+import Footers from './components/footers';
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+      <Headers />
+      <MainRouter />
+      <Footers />
+    </>
   );
 }
 
