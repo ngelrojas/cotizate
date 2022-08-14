@@ -1,25 +1,22 @@
 import React from 'react';
 import {MenuHome} from '../../utils/menu_home';
-import Link from '@mui/material/Link';
+import {Ul, Lin} from './styles';
 
 const Menu = () => {
   return(
-    <nav>
-      <ul>
+      <Ul>
         {MenuHome ? MenuHome.map(item => {
           return(
             <li key={item.key}>
-              <Link href={item.path} underline='none'>
-                {/* <span>{item.title}</span> */}
+              <Lin href={item.path} underline='none'>
                 {
                   item.logo ? (<img src={item.logo} />):(item.title)
                 } 
-              </Link>
+              </Lin>
             </li>
           )
-        }):('')}
-      </ul>
-    </nav>
+        }):(null)}
+      </Ul>
   )
 }
 

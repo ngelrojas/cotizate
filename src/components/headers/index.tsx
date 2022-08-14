@@ -1,11 +1,13 @@
 import React from 'react';
 import Menu from '../menu'; 
+import BoxSearch from '../search';
 
 const Headers = () => {
   return(
-    <div>
+    <nav>
       <Menu />
-    </div>
+      <BoxSearch />
+    </nav>
   )
 }
 
