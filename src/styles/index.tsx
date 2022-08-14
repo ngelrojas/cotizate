@@ -1,4 +1,5 @@
-import {createGlobalStyle} from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 export const GlobalLayout = createGlobalStyle`
     html {
@@ -16,4 +17,8 @@ export const GlobalLayout = createGlobalStyle`
     margin: 0px;
     padding: 0px; 
 }
+`
+
+export const ArrowUpIcon = styled(ArrowCircleUpIcon)`
+  color: rgb(243,122,34);
 `

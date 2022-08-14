@@ -8,8 +8,9 @@ export const Ul = styled.ul`
 `
 
 export const Lin = styled(Link)`
+  color: #ffffff!important;
   :hover{
-    color: rgb(243, 122, 34);
+    color: rgb(243, 122, 34)!important;
   }
 `
 

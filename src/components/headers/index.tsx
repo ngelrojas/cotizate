@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Menu from '../menu'; 
 import BoxSearch from '../search';
+import { Nav } from './styles';
 
-const Headers = () => {
+interface PropsSqty {
+  sqty: number
+}
+
+const Headers = (props:PropsSqty) => {
+  const [IsDisplay, setIsDisplay] = useState(false);
+  console.log('IN HEADER ', props.sqty);
+
+
   return(
-    <nav>
-      <Menu />
+    <>
+      <Nav>
+        <Menu />
+      </Nav>
+
       <BoxSearch />
-    </nav>
+    </>
+
   )
 }
 
