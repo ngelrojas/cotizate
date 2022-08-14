@@ -1,11 +1,17 @@
 import React from 'react';
-import HomePage from './views/home';
+import MainRouter from './routes';
+import {GlobalLayout} from './styles';
+import Headers from './components/headers';
+import Footers from './components/footers';
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+      <GlobalLayout />
+      <Headers />
+      <MainRouter />
+      <Footers />
+    </>
   );
 }
 
