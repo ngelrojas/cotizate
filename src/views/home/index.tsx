@@ -1,7 +1,9 @@
 // import React from 'react';
+import Grid from '@mui/material/Grid';
 import ListPosts from "../../components/list-posts";
 import SideBar from "../../components/side-bar";
-import { Main } from './styles';
+
+// import { Main } from './styles';
 
 // const HomePage = () => {
 
@@ -35,12 +37,12 @@ import { Main } from './styles';
 
 const HomePage = () => {
   return(
-    <Main>
+    <Grid container>
       <ListPosts />
 
       <SideBar />
 
-    </Main> 
+    </Grid> 
   )
 }
 

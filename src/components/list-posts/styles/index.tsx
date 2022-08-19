@@ -8,6 +8,6 @@ export const GroupSingle = styled.div`
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
 `
 
