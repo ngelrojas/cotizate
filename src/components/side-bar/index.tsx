@@ -1,14 +1,11 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import {Section, TitleSide, Go} from './styles';
+import {Section, TitleSide} from './styles';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import StarIcon from '@mui/icons-material/Star';
 
+//TODO: CREATE A SIDEBAR LIKE A FOOTER COMPONENT, USING UTILS, CONSTANTS, TYPES
 const SideBar = () => {
   return (
       <Section>
