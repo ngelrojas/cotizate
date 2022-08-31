@@ -13,7 +13,7 @@ const SideBar = () => {
   return (
       <Section>
         <Grid container spacing={2}>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <TitleSide>
               <h3>Contenido</h3>
             </TitleSide>

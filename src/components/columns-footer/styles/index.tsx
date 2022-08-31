@@ -11,8 +11,9 @@ export const FooterTitle = styled(Grid)`
   justify-content: center;
 `
 
-export const FooterBody = styled(Grid)`
+export const ItemFooterBody = styled(Grid)`
   margin-top: 3%;
+  margin-left: 25%;
 `
 
 export const SubBody = styled(Grid)`

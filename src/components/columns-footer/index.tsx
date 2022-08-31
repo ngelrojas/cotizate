@@ -1,43 +1,18 @@
-import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import { FooterTitle, FooterBody, SubBody } from "./styles";
+import { ItemFooterBody, SubBody } from "./styles";
 
-interface Sublink{
-  id: number;
-  label: string
+interface itSublinks {
+  sublink: string
+  href: string
 }
 
-interface ListLinks {
-  sublinks: Sublink[] 
-}
-
-//TODO: fixing - how to pass array in the component
-// when income the sublinks is getting undefined
-const ColumnsFooter = ({title}: any, {sublinks}: ListLinks) => {
-  console.log(sublinks)
+const  ColumnsFooter = ( {sublink, href}: itSublinks ) => {
   return(
-    <>
-          <FooterTitle> <h3>{title}</h3></FooterTitle> 
-          <FooterBody> 
-        {
-          sublinks ? sublinks.map((sublink: Sublink) => (
+          <ItemFooterBody> 
             <SubBody >
-              <Link key={sublink.id} underline='none'>{sublink.label}</Link>
-            </SubBody>)
-        ):('')
-        }
-
-            {/* <SubBody> */}
-            {/*   <Link underline="none">{subtitle}</Link> */}
-            {/* </SubBody> */}
-            {/* <SubBody> */}
-            {/*   <Link underline="none">{subtitle}</Link> */}
-            {/* </SubBody> */}
-            {/* <SubBody> */}
-            {/*   <Link underline="none">{subtitle}</Link> */}
-            {/* </SubBody> */}
-          </FooterBody>
-      </>
+              <Link href={href} underline='none'>{sublink}</Link>
+            </SubBody> 
+          </ItemFooterBody>
   )
 }
 

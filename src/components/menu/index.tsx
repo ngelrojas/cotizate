@@ -1,5 +1,5 @@
 import React from 'react';
-import {MenuHome} from '../../utils/menu_home';
+import {MenuHome} from '../../constants';
 import {Ul, Lin} from './styles';
 
 const Menu = () => {
