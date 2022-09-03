@@ -9,6 +9,10 @@ export const FooterContainer = styled(Grid)`
 export const FooterTitle = styled(Grid)`
   display: flex;
   justify-content: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 1%;
+  box-shadow: inset 0px 1px 1px 0px #ddd;
 `
 
 export const FooterBody = styled(Grid)`

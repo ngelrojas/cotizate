@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,9 +12,14 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Link from '@mui/material/Link';
+import PostMenu from './post-menu';
+import CircularStatic from './recaudation';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -29,49 +35,68 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-
+//TODO: update CircularStatic for pie char in this link below
+//https://devexpress.github.io/devextreme-reactive/react/chart/docs/reference/pie-series/
 const Post = () => {
   const [expanded, setExpanded] = React.useState(false);
+  const [Like, setLike] = React.useState(true);
+  const [BookMark, setBookMark] = React.useState(true);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleLike = () => {
+    setLike(!Like)
+  }
+
+  const handleBookMark = () => {
+
+    setBookMark(!BookMark)
+  }
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
+          <Link href="/usuario-info" underline='none'>
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              R
+            </Avatar>
+          </Link>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+            <PostMenu />
         }
-        title="Shrimp and Chorizo Paella"
+        title='Shrimp and Chorizo Pella'
         subheader="September 14, 2016"
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://picsum.photos/seed/picsum/200/300"
-        alt="Paella dish"
-      />
+      <Link href="#" underline='none'>
+        <CardMedia
+          component="img"
+          height="194"
+          image="https://picsum.photos/seed/picsum/200/300"
+          alt="Paella dish"
+        />
+      </Link>
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
+        <Link href="/here" underline='none'>
+          <Typography variant="body2" color="text.secondary">
+            This impressive paella is a perfect party dish and a fun meal to cook
+            together with your guests. Add 1 cup of frozen peas along with the mussels,
+            if you like.
+          </Typography>
+        </Link>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton aria-label="add to favorites" onClick={handleLike}>
+          {Like ? (<FavoriteBorderIcon />):(<FavoriteIcon />)}
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
+        </IconButton>
+        <IconButton aria-label="add to favorites" onClick={handleBookMark}>
+          {BookMark ? (<BookmarkBorderIcon />):(<BookmarkIcon />)}
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -89,15 +114,9 @@ const Post = () => {
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
             aside for 10 minutes.
           </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-            large plate and set aside, leaving chicken and chorizo in the pan. Add
-            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-            stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
+          <Grid xs={12}>
+            <CircularStatic />
+          </Grid>
           <Typography paragraph>
             Add rice and stir very gently to distribute. Top with artichokes and
             peppers, and cook without stirring, until most of the liquid is absorbed,

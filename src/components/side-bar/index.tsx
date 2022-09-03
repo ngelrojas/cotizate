@@ -4,8 +4,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import Link from '@mui/material/Link';
 
-//TODO: CREATE A SIDEBAR LIKE A FOOTER COMPONENT, USING UTILS, CONSTANTS, TYPES
 const SideBar = () => {
   return (
       <Section>
@@ -21,18 +21,30 @@ const SideBar = () => {
                   sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
                   aria-label="contacts"
                 >
+
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="Article one" />
+                  <ListItemText>
+                    <Link href="#" underline='none'> - Article one</Link>
+                  </ListItemText>
                 </ListItemButton>
               </ListItem>
 
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="Article two" />
+                  <ListItemText>
+                    <Link href="#" underline='none'> - Article two</Link>
+                  </ListItemText>
                 </ListItemButton>
               </ListItem>
 
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText>
+                    <Link href="#" underline='none'> - Article three</Link>
+                  </ListItemText>
+                </ListItemButton>
+              </ListItem>
 
             </List>
           </Grid>
