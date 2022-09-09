@@ -19,7 +19,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Link from '@mui/material/Link';
 import PostMenu from './post-menu';
-import CircularStatic from './recaudation';
+import Recaudation from './recaudation';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -35,8 +35,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-//TODO: update CircularStatic for pie char in this link below
-//https://devexpress.github.io/devextreme-reactive/react/chart/docs/reference/pie-series/
+
 const Post = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [Like, setLike] = React.useState(true);
@@ -115,19 +114,9 @@ const Post = () => {
             aside for 10 minutes.
           </Typography>
           <Grid xs={12}>
-            <CircularStatic />
+            <Recaudation />
           </Grid>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is absorbed,
-            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-            mussels, tucking them down into the rice, and cook again without
-            stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
+
         </CardContent>
       </Collapse>
     </Card>

@@ -1,24 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Menu from '../menu'; 
 import BoxSearch from '../search';
 import { Nav } from './styles';
+import { Ilocation } from '../../types';
 
-interface PropsSqty {
-  sqty: number
-}
-
-const Headers = (props:PropsSqty) => {
-  const [IsDisplay, setIsDisplay] = useState(false);
-  console.log('IN HEADER ', props.sqty);
-
+const Headers = (location: Ilocation) => {
+  const pathName = location.pathname
+  const url_1 = pathName !== '/ingresar' ? true : false
+  const url_2 = pathName !== '/registrarse' ? true : false
+  const display_ = url_1 === url_2 ? true : false
 
   return(
     <>
       <Nav>
         <Menu />
       </Nav>
-
-      <BoxSearch />
+        {
+          display_ ? (<BoxSearch />):('') 
+        }
     </>
 
   )

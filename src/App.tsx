@@ -22,7 +22,6 @@ function App() {
   return (
     <React.Fragment>
         <GlobalLayout />
-        <Headers sqty={ScrollCount} />
         <MainRouter />
         <ScrollToTop
           smooth 

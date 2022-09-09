@@ -1,3 +1,4 @@
+import React from 'react';
 import Grid from '@mui/material/Grid';
 import {Section, TitleSide} from './styles';
 import List from '@mui/material/List';

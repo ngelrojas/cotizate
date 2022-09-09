@@ -19,10 +19,9 @@ export const WEARE:Array<itSublink>  = [
 ]
 
 export const MenuHome:Array<itemHome> = [
-  {key: 'crear-proyectos', title: 'CREAR PROYECTOS', path: '/crear-proyectos'},
-  {key: 'explorar-proyectos', title: 'EXPLORAR PROYECTOS', path: '/explorar-proyectos'},
-  {key: 'home', path: '/', logo:'/assets/images/logo_cotizate.png'},
-  {key: 'categorias', title: 'CATEGORIAS', path: '/categorias'},
-  {key: 'registrarse', title: 'REGISTRARSE', path: '/registrarse'},
-  {key: 'ingresar', title: 'INGRESAR', path: '/ingresar'},
+  {key: 'explorar-proyectos', title: 'EXPLORAR PROYECTOS', path: '/explorar-proyectos', opt:1},
+  {key: 'categorias', title: 'CATEGORIAS', path: '/categorias', opt:1},
+  {key: 'home', path: '/', logo:'/assets/images/logo_cotizate.png', opt:1},
+  {key: 'registrarse', title: 'REGISTRARSE', path: '/registrarse', opt: 0},
+  {key: 'ingresar', title: 'INGRESAR', path: '/ingresar', opt:0},
 ]

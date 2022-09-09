@@ -1,3 +1,4 @@
+import React from "react";
 import ColumnsFooter from "../components/columns-footer"
 import { itSublink } from '../types';
 
