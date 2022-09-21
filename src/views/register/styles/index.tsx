@@ -11,4 +11,3 @@ export const ContainerForm = styled(Grid)`
 export const ContainerLogin = styled(Container)`
   height: calc(70vw * (9/16));
 `
-

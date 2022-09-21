@@ -13,7 +13,7 @@ const Headers = (location: Ilocation) => {
   return(
     <>
       <Nav>
-        <Menu />
+        <Menu {...location} />
       </Nav>
         {
           display_ ? (<BoxSearch />):('') 
