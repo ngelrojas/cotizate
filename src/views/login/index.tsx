@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { ContainerLogin } from './styles'
 import Avatar from '@mui/material/Avatar';
@@ -17,6 +17,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Ilocation } from '../../types';
 import Headers from '../../components/headers';
+import { SignIN } from '../../storage/actions/auth.actions';
 
 function Copyright(props: any) {
   return (
@@ -33,17 +34,17 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-const LoginPage = () => {
+const LoginPage = (props: any) => {
 
   const location:Ilocation = useLocation();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    let email: string = data.get('email') as string;
+    let password: string = data.get('password') as string;
+    props.SignIN({email, password});
   }
 
   return(
@@ -124,4 +125,11 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage;
+const mapStateToProps = (state: any) => ({
+  user: state.user
+}) 
+
+const mapActionToProps = {
+  SignIN
+}
+export default connect(mapStateToProps, mapActionToProps)(LoginPage);

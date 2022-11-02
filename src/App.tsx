@@ -6,6 +6,7 @@ import Footers from './components/footers';
 import {GlobalLayout, ArrowUpIcon} from './styles';
 
 
+
 function App() {
     const [ScrollCount, setScrollCount] = useState(0); 
 
