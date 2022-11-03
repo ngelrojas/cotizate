@@ -25,3 +25,13 @@ export const MenuHome:Array<itemHome> = [
   {key: 'registrarse', title: 'REGISTRARSE', path: '/registrarse', opt: 0},
   {key: 'ingresar', title: 'INGRESAR', path: '/ingresar', opt:0},
 ]
+
+export const MenuUser:Array<itemHome> = [
+  {key: 'explorar-proyectos', title: 'EXPLORAR PROYECTOS', path: '/explorar-proyectos', opt:1},
+  {key: 'categorias', title: 'CATEGORIAS', path: '/categorias', opt:1},
+  {key: 'home', path: '/', title: 'HOME', logo:'/assets/images/logo_cotizate.png', opt:1},
+  {key: 'user', title: 'USER', path: '/dashboard', opt:1, submenu: [
+    {key: 'profile', title: 'PROFILE', path: '/dashboard/profile'},
+    {key: 'campaings', title: 'CAMPAINGS', path: '/dashboard/campaings'},
+  ]}
+]

@@ -15,22 +15,27 @@ interface AuthData {
 const auth = new Auth();
 
 export const SignIN = (authData: AuthData) => (dispatch: any) => {
+
   dispatch({type: LOADING_USER});
+
   auth.login(authData)
     .then((resp: any) => {
       dispatch({
         type: SET_AUTHENTICATED,
         payload: resp.data.token
       });
+      
+      window.sessionStorage.setItem('token', resp.data.token);
 
-      dispatch(CurrentUser(resp.data.token));
+      // dispatch(CurrentUser());
 
-    }).catch((error: any) => {
+      window.location.href = '/';
+
+    }).catch((err: any) => {
       dispatch({
         type: SET_UNAUTHENTICATED,
-        payload: error
-      }) 
+        payload: err
+      }); 
     })
 }
-
 

@@ -18,14 +18,13 @@ export const AuthReducer = (state = initialState, action: any) => {
         authenticated: true,
         token: action.payload
       }
-    //TODO: check status, how to recovery status and message 
-    // from backend 
     case SET_UNAUTHENTICATED:
       return {
           authenticated: false,
           message: action.payload.message,
           code: action.payload.code,
-          status: action.payload
+          status: action.payload.response.status,
+          errors: action.payload.response.data
       } 
 
     default:

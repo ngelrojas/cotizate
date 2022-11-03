@@ -1,19 +1,20 @@
-import React from 'react';
-import {MenuHome} from '../../constants';
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
+import { useNavigate }  from 'react-router-dom';
+import { MenuHome, MenuUser } from '../../constants';
 import {Ul, Lin} from './styles';
-import { Ilocation } from '../../types'
+import { CheckAuth } from '../../services/auth.service';
+// import { Ilocation } from '../../types'
 
-const Menu = (location: Ilocation) => {
-  const pathName = location.pathname
-
+function MenuGeneral(menu:any, pathName: string){
   return(
       <Ul>
-        {MenuHome ? MenuHome.map(item => {
+        {menu ? menu.map((item: any) => {
           return(
             <li key={item.key}>
               <Lin href={item.path} underline='none'  primary={pathName == item.path ? true : false}>
                 {
-                  item.logo ? (<img src={item.logo} />):(item.title)
+                  item.title
                 } 
               </Lin>
             </li>
@@ -23,4 +24,27 @@ const Menu = (location: Ilocation) => {
   )
 }
 
-export default Menu;
+const Menu = (props: any) => {
+  const pathName = location.pathname
+  let navigate = useNavigate();
+
+  if(!CheckAuth()){
+    navigate('/') 
+  }
+
+  return(
+    <>
+      {
+        props.user.authenticated ? 
+          (MenuGeneral(MenuUser, pathName)):
+          (MenuGeneral(MenuHome, pathName))
+      }
+    </>
+  )
+}
+
+const mapStateToProps = (state: any) => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps, null)(Menu);

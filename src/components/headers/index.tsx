@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Menu from '../menu'; 
 import BoxSearch from '../search';
 import { Nav } from './styles';

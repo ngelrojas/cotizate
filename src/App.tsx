@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ScrollToTop from "react-scroll-to-top";
 import MainRouter from './routes'; 
-import Headers from './components/headers';
+// import Headers from './components/headers';
 import Footers from './components/footers';
 import {GlobalLayout, ArrowUpIcon} from './styles';
 

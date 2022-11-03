@@ -1,7 +1,11 @@
 export const SET_AUTHENTICATED = 'SET_AUTHENTICATED';
 export const SET_UNAUTHENTICATED = 'SET_UNAUTHENTICATED';
-export const SET_USER = 'SET_USER';
 export const LOADING_USER = 'LOADING_USER';
+export const SET_USER = 'SET_USER';
+export const SET_UPDATE_USER = 'SET_UPDATE_USER';
+export const SET_DELETE_USER = 'SET_DELETE_USER';
+export const SET_DELETE_ERROR = 'SET_DELETE_ERROR';
+export const SET_UPDATE_ERROR = 'SET_UPDATE_ERROR';
 
 // export enum ActionType {
 //   SIGN_IN = 'SIGN_IN',

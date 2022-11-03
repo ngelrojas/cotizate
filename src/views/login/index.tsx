@@ -125,11 +125,12 @@ const LoginPage = (props: any) => {
   )
 }
 
-const mapStateToProps = (state: any) => ({
-  user: state.user
-}) 
+// const mapStateToProps = (state: any) => ({
+//   user: state.user
+// }) 
 
 const mapActionToProps = {
   SignIN
 }
-export default connect(mapStateToProps, mapActionToProps)(LoginPage);
+
+export default connect(null, mapActionToProps)(LoginPage);
