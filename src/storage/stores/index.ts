@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { AuthReducer } from '../reducers/auth.reducer';
 import { UserReducer } from '../reducers/users.reducer';
+import { ProfessionalReducer } from '../reducers/professional.reducer';
 
 declare global {
   interface Window {
@@ -11,9 +12,10 @@ declare global {
 const initialState = {}
 const reducer = combineReducers({
   auth: AuthReducer,
-  user: UserReducer 
+  user: UserReducer,
+  professional: ProfessionalReducer
 })
-
+//TODO: create store for REGISTER USER
 const store = createStore(
   reducer,
   initialState,
