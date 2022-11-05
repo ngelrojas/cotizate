@@ -21,3 +21,7 @@ export const SET_UPDATE_PP = 'SET_UPDATE_PP';
 export const SET_UPDATE_PP_ERROR = 'SET_UPDATE_PP_ERROR';
 export const SET_DELETE_PP = 'SET_DELETE_PP';
 export const SET_DELETE_PP_ERROR = 'SET_DELETE_PP_ERROR';
+
+//register
+export const SET_REGISTER = 'SET_REGISTER';
+export const SET_REGISTER_ERROR = 'SET_REGISTER_ERROR';

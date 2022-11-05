@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { ContainerLogin } from './styles'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -14,6 +15,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Ilocation } from '../../types';
 import Headers from '../../components/headers';
+import { registerUser } from '../../storage/actions/register.actions'
 
 function Copyright(props: any) {
   return (
@@ -29,14 +31,27 @@ function Copyright(props: any) {
 }
 
 const theme = createTheme();
-
-const RegisterPage = () => {
+//TODO: test the integration register 
+const RegisterPage = (props: any) => {
 
   const location:Ilocation = useLocation();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    let email: string = data.get('email') as string;
+    let password: string = data.get('password') as string;
+    let first_name: string = data.get('first_name') as string;
+    let last_name: string = data.get('last_name') as string;
+    // let cellphone: string = data.get('cellphone') as string;
+    
+    props.registerUser({
+      first_name,
+      last_name,
+      email,
+      password
+    });
+
     console.log({
       email: data.get('email'),
       password: data.get('password'),
@@ -143,4 +158,8 @@ const RegisterPage = () => {
   )
 }
 
-export default RegisterPage;
+const mapActionToProps = {
+  registerUser
+}
+
+export default connect()(RegisterPage);
